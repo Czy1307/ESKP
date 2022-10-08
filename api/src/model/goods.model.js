@@ -38,6 +38,6 @@ const Goods = seq.define('eskp_goods', {
 })
 
 //强制重新创建数据表
-Goods.sync({ force: true })
+// Goods.sync({ force: true })
 
 module.exports = Goods

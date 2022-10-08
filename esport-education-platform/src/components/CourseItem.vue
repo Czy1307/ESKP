@@ -36,6 +36,7 @@ export default {
   async created() {
     let getData = await this.$axios.get("/goods/courseData");
     let courseList = getData.data;
+    console.log("课程信息", courseList);
     // 区别不同分区
     let areaList = _.filter(courseList, (item) => {
       return this.courseTitle.includes(item.goods_area);

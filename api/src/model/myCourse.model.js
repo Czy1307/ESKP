@@ -23,6 +23,6 @@ const MyCourse = seq.define('eskp_myCourse', {
 })
 
 //强制重新创建数据表
-MyCourse.sync({ force: true })
+// MyCourse.sync({ force: true })
 
 module.exports = MyCourse

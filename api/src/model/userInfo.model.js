@@ -43,6 +43,6 @@ const UserInfo = seq.define('eskp_userInfo', {
 })
 
 //强制重新创建数据表
-UserInfo.sync({ force: true })
+// UserInfo.sync({ force: true })
 
 module.exports = UserInfo

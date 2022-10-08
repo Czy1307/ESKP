@@ -2,18 +2,16 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-import { setStore } from '@/utils/storage'
+
+//引入仓库
+import course from './course'
+import user from './user'
+
 
 export default new Vuex.Store({
-    state: {
-        login: false,
-        userInfor: null,
-    },
-    mutations: {
-        islogin(state, info) {
-            state.userInfo = info
-            state.login = true
-            setStore('userInfo', info)
-        }
+    modules: {
+        course,
+        user,
+        login
     }
 })

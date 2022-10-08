@@ -23,6 +23,6 @@ const History = seq.define('eskp_history', {
 })
 
 //强制重新创建数据表
-History.sync({ force: true })
+// History.sync({ force: true })
 
 module.exports = History

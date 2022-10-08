@@ -3,10 +3,10 @@
     <div class="course-display" v-for="item in titleList" :key="item">
       <div class="game-title">{{ item.title }}</div>
       <div>
-        <course-item
+        <CourseItem
           :courseLibrary="courseLibrary"
           :courseTitle="item.title"
-        ></course-item>
+        ></CourseItem>
       </div>
     </div>
   </div>

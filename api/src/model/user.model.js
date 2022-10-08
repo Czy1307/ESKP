@@ -24,6 +24,6 @@ const User = seq.define('eskp_user', {
 })
 
 //强制重新创建数据表
-User.sync({ force: true })
+// User.sync({ force: true })
 
 module.exports = User
