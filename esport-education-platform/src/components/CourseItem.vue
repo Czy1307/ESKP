@@ -3,7 +3,7 @@
     <div
       class="course-item"
       v-for="course in courseData"
-      :key="course.goods_name"
+      :key="course.id"
       @click="toCourseDetail(course.id)"
     >
       <img class="play-icon" src="@/assets/img/icon/play.png" alt="" />
@@ -24,7 +24,7 @@
 
 <script>
 import _ from "lodash";
-
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -33,26 +33,37 @@ export default {
     };
   },
   props: ["courseTitle", "courseLibrary"],
-  async created() {
-    let getData = await this.$axios.get("/goods/courseData");
-    let courseList = getData.data;
-    console.log("课程信息", courseList);
-    // 区别不同分区
-    let areaList = _.filter(courseList, (item) => {
-      return this.courseTitle.includes(item.goods_area);
-    });
-    if (this.courseLibrary) {
-      this.courseData = areaList;
-      this.courseClass = "course-library";
-    } else {
-      // 随机抽取三个在首页展示
-      this.courseData = _.sampleSize(areaList, 3);
-      this.courseClass = "course-home";
-    }
+  created() {
+    this.$store.dispatch("courseList");
   },
   methods: {
     toCourseDetail(id) {
       this.$router.push(`/courseDetail?courseId=${id}`);
+    },
+  },
+  computed: {
+    ...mapState({
+      courseList: (state) => state.course.courseList,
+    }),
+  },
+  watch: {
+    courseList: {
+      handler: function () {
+        // 区别不同分区
+        let areaList = _.filter(this.courseList, (item) => {
+          return this.courseTitle.includes(item.goods_area);
+        });
+        if (this.courseLibrary) {
+          this.courseData = areaList;
+          this.courseClass = "course-library";
+        } else {
+          // 随机抽取三个在首页展示
+          this.courseData = _.sampleSize(areaList, 3);
+          this.courseClass = "course-home";
+        }
+      },
+      deep: true,
+      immediate: true,
     },
   },
 };
