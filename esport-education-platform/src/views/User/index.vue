@@ -6,7 +6,7 @@
       </el-header>
       <el-container>
         <el-aside width="250px">
-          <side-navigation />
+          <SideNavigation />
         </el-aside>
         <el-main class="user-main">
           <keep-alive> <router-view></router-view> </keep-alive
@@ -17,14 +17,12 @@
 </template>
 
 <script>
-import Navigation from "./public/Navigation.vue";
-import sideNavigation from "./userPage/sideNavigation.vue";
+import SideNavigation from "@/views/User/SideNavigation";
 
 export default {
   name: "user",
   components: {
-    Navigation,
-    sideNavigation,
+    SideNavigation,
   },
   methods: {},
 };

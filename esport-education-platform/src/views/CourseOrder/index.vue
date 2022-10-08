@@ -57,8 +57,6 @@
 </template>
 
 <script>
-import Navigation from "./public/Navigation.vue";
-import Bottom from "./homePage/Bottom.vue";
 import { getStore } from "@/utils/storage";
 
 export default {
@@ -70,10 +68,6 @@ export default {
       imgUrl: "",
       title: "",
     };
-  },
-  components: {
-    Navigation,
-    Bottom,
   },
   created() {
     this.getCourseData();

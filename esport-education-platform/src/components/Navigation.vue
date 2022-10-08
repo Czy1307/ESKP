@@ -26,7 +26,7 @@
 import { getStore } from "@/utils/storage";
 
 export default {
-  name: "navigation",
+  name: "Navigation",
   methods: {
     toUser() {
       let account = getStore("account");

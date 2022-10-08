@@ -5,31 +5,32 @@
       <div class="login-close">
         <i class="el-icon-close" @click="closeHandler"></i>
       </div>
-      <login
+      <Login
         @changePassword="changePasswordHandler"
         @registShow="registShowHandler"
         @close="closeHandler"
         v-show="loginActive"
-      ></login>
-      <regist
+      ></Login>
+      <Regist
         @close="closeHandler"
         @loginShow="loginShowHandler"
         v-show="registActive"
-      ></regist>
-      <change-password
+      ></Regist>
+      <ChangePassword
         @loginShow="loginShowHandler"
         v-show="changePasswordActive"
-      ></change-password>
+      ></ChangePassword>
     </div>
   </div>
 </template>
 
 <script>
-import ChangePassword from "./LoginComponents/changePassword.vue";
-import login from "./LoginComponents/login.vue";
-import regist from "./LoginComponents/regist.vue";
+import ChangePassword from "@/components/LoginComponents/changePassword.vue";
+import Login from "@/components/LoginComponents/login.vue";
+import Regist from "@/components/LoginComponents/regist.vue";
 
 export default {
+  name: "LoginPage",
   data() {
     let accountCheck = (rule, value, callback) => {
       if (value === "") {
@@ -63,8 +64,8 @@ export default {
     };
   },
   components: {
-    login,
-    regist,
+    Login,
+    Regist,
     ChangePassword,
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div id="course">
-    <Navigation></Navigation>
+    <Navigation />
     <div class="course-page">
       <div class="course-bar">
         <div class="title-bar">{{ title }}</div>
@@ -30,16 +30,10 @@
 </template>
 
 <script>
-import Navigation from "./public/Navigation.vue";
-import Bottom from "./homePage/Bottom.vue";
 import { getStore } from "@/utils/storage";
 import date from "date-and-time";
 
 export default {
-  components: {
-    Navigation,
-    Bottom,
-  },
   data() {
     return {
       title: "",

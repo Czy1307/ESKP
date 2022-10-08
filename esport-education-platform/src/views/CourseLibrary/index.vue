@@ -1,9 +1,9 @@
 <template>
   <div id="course-library">
-    <navigation></navigation>
+    <Navigation />
     <div class="library-main">
       <div class="library-bar">
-        <course-display :courseLibrary="courseLibrary"></course-display>
+        <CourseDisplay :courseLibrary="courseLibrary"></CourseDisplay>
       </div>
     </div>
     <Bottom />
@@ -11,15 +11,11 @@
 </template>
 
 <script>
-import navigation from "./public/Navigation.vue";
-import courseDisplay from "./homePage/Main/CourseDisplay.vue";
-import Bottom from "./homePage/Bottom.vue";
+import CourseDisplay from "@/components/CourseDisplay.vue";
 
 export default {
   components: {
-    navigation,
-    courseDisplay,
-    Bottom,
+    CourseDisplay,
   },
   data() {
     return {

@@ -1,17 +1,14 @@
 <template>
   <div id="home-page">
     <Navigation @loginShow="loginShowHandler"></Navigation>
-    <Main />
+    <MainBar />
     <Bottom />
-    <login-page @close="closeHandler" v-if="loginShow"></login-page>
+    <LoginPage @close="closeHandler" v-if="loginShow"></LoginPage>
   </div>
 </template>
 
 <script>
-import Navigation from "./public/Navigation.vue";
-import Main from "./homePage/Main.vue";
-import Bottom from "./homePage/Bottom.vue";
-import LoginPage from "./loginPage.vue";
+import MainBar from "@/views/Home/MainBar";
 
 export default {
   name: "home",
@@ -29,10 +26,7 @@ export default {
     },
   },
   components: {
-    Navigation,
-    Main,
-    Bottom,
-    LoginPage,
+    MainBar,
   },
 };
 </script>

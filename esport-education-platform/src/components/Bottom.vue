@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "buttom",
+  name: "Bottom",
 };
 </script>
 

@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import CourseItem from "./CourseItem.vue";
+import CourseItem from "@/components/CourseItem.vue";
 export default {
-  name: "course-display",
+  name: "CourseDisplay",
   data() {
     return {
       titleList: [

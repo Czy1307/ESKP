@@ -1,24 +1,17 @@
 <template>
   <div id="main">
     <div class="main-bar">
-      <swiper />
-      <course-display></course-display>
+      <Swiper />
+      <CourseDisplay />
     </div>
   </div>
 </template>
 
 <script>
-import Swiper from "./Main/Top.vue";
-import CourseDisplay from "./Main/CourseDisplay.vue";
-
 export default {
   name: "main",
   data() {
     return {};
-  },
-  components: {
-    Swiper,
-    CourseDisplay,
   },
 };
 </script>

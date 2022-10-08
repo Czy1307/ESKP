@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '@/components/Home.vue'
-import User from '@/components/User.vue'
-import CourseDetail from '@/components/CourseDetail.vue'
+import Home from '@/views/Home'
+import User from '@/views/User'
+import CourseDetail from '@/views/CourseDetail'
 import ChangePassword from '@/components/LoginComponents/changePassword.vue'
-import CourseLibrary from '@/components/courseLibrary.vue'
-import info from '@/components/userPage/info.vue'
-import history from '@/components/userPage/history.vue'
-import CourseOrder from '@/components/courseOrder.vue'
-import myCourse from '@/components/userPage/myCourse.vue'
+import CourseLibrary from '@/views/CourseLibrary'
+import Info from '@/views/User/Info'
+import History from '@/views/User/History'
+import CourseOrder from '@/views/CourseOrder'
+import MyCourse from '@/views/User/MyCourse'
 
 Vue.use(VueRouter)
 
@@ -28,17 +28,17 @@ const routes = [
             {
                 path: "/info",
                 name: 'info',
-                component: info
+                component: Info
             },
             {
                 path: "/history",
                 name: 'history',
-                component: history
+                component: History
             },
             {
                 path: "/myCourse",
                 name: 'myCourse',
-                component: myCourse
+                component: MyCourse
             }
         ]
     },
